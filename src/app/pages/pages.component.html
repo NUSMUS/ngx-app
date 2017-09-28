@@ -1,0 +1,27 @@
+<div id="page-container" class="header-fixed-top sidebar-partial sidebar-visible-lg sidebar-no-animations footer-fixed">
+  <!-- Titulo del Dashboard  PRIMER MODULO-->
+  <div id="sidebar">
+    <app-profile-menu></app-profile-menu>
+  </div>
+
+  <!-- Encabezado -->
+  <div id="main-container">
+    <header class="navbar navbar-default navbar-fixed-top">
+      <app-header></app-header>
+      <!-- Buscador Header -->
+      <app-search></app-search>
+      <app-user-menu></app-user-menu>
+    </header>
+
+    <!-- Titulo y subtitulo de la pagina -->
+    <div id="page-content">
+      <router-outlet></router-outlet>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="clearfix">
+      <app-footer></app-footer>    
+    </footer>
+  </div>
+</div>

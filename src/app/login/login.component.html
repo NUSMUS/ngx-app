@@ -36,7 +36,8 @@
         </div>
         <div class="col-xs-8 text-right">
           <!--<button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Login to Dashboard</button>-->
-          <a routerLink="/home" class="btn btn-sm btn-primary">Iniciar Sesión</a>
+          <!-- <a routerLink="/dashboard" class="btn btn-sm btn-primary">Iniciar Sesión</a>-->
+          <a class="btn btn-sm btn-primary" [routerLink]="['/dashboard']" (click)="onLoggedin()"> Iniciar Sesión </a>
         </div>
       </div>
       <div class="form-group">

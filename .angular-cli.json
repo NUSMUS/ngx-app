@@ -30,7 +30,9 @@
         "assets/js/vendor/jquery.min.js",
         "assets/js/vendor/bootstrap.min.js",
         "assets/js/plugins.js",
-        "assets/js/app.js"
+        "assets/js/app.js",
+        "assets/js/pages/login.js",
+        "assets/js/pages/index.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
