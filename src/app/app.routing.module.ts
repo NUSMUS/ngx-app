@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
-import { AuthGuard } from './shared';
+import { GuardService } from './shared';
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: './pages/pages.module#PagesModule',
-    canActivate: [AuthGuard]
-  },
-  { path: 'login', loadChildren: './login/login.module#LoginModule' },
-  { path: 'error404', loadChildren: './error404/error404.module#Error404Module' },
-  { path: 'register', loadChildren: './register/register.module#RegisterModule' },
-  { path: 'reminder', loadChildren: './reminder/reminder.module#ReminderModule' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', loadChildren: './authentication/login/login.module#LoginModule' },
+  { path: 'error404', loadChildren: './authentication/error404/error404.module#Error404Module' },
+  { path: 'register', loadChildren: './authentication/register/register.module#RegisterModule' },
+  { path: 'reminder', loadChildren: './authentication/reminder/reminder.module#ReminderModule' },
+  { path: 'pages', loadChildren: './pages/pages.module#PagesModule',canActivate:[GuardService] },
   { path: '**', redirectTo: 'error404'}
 ];
 

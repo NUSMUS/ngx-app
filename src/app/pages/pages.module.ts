@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PagesComponent } from './pages.component';
 
+import { GuardService } from '../shared'; 
+
 import { PagesRoutingModule } from './pages.routing.module';
 
 import { FooterComponent,
@@ -26,6 +28,9 @@ import { FooterComponent,
     SearchComponent,
     ThemeColorComponent,
     UserMenuComponent
+  ],
+  providers: [
+    GuardService
   ]
 })
 export class PagesModule { }

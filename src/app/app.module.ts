@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app.routing.module';
 
-import { AuthGuard } from './shared';
+import { GuardService } from './shared';
+import { AutenticacionService } from './shared';
 
 import { AppComponent } from './app.component';
 
@@ -19,7 +20,8 @@ import { AppComponent } from './app.component';
     HttpModule
   ],
   providers: [
-    AuthGuard
+    GuardService,
+    AutenticacionService
   ],
   bootstrap: [AppComponent]
 })
