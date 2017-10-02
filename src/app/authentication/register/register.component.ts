@@ -16,7 +16,8 @@ export class RegisterComponent implements OnInit {
 
   erroresForm = {
     'email': '',
-    'password': ''
+    'password': '',
+    'confirm': ''
   }
 
   mensajesValidacion = {
@@ -27,7 +28,8 @@ export class RegisterComponent implements OnInit {
     'password': {
       'required': 'Contraseña obligatoria',
       'pattern': 'La contraseña debe tener al menos una letra y un numero',
-      'minlength': 'y más de 6 caracteres'
+      'minlength': 'y más de 6 caracteres',
+      'confirmPass': 'Confirma contraseña'
     }
   }
   constructor(private formBuilder: FormBuilder, private autServie: AutenticacionService, private router: Router, private activatedRouter: ActivatedRoute) { }
@@ -35,12 +37,18 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.registroForm = this.formBuilder.group ({
       'email': ['', [Validators.required, Validators.email]],
-      'password': ['', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'), Validators.minLength(6)]]
+      'password': ['', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$'), Validators.minLength(6)]],
+      'confirm': ['',Validators.required]
        //concepto: ['',Validators.compose([Validators.required, Validators.minLength(10)])],
     });
     this.registroForm.valueChanges.subscribe(data =>
       this.onValueChanged(data));
       this.onValueChanged();
+  }
+
+  confirmPass() {
+    const val = this.registroForm.value;
+    return val && val.password && val.password == val.confirm;
   }
 
   onValueChanged(data?: any) {

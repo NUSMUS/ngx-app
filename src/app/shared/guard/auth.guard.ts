@@ -3,8 +3,11 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateCh
 
 import { AutenticacionService } from '../services/autenticacion.service';
 
+
 @Injectable()
+
 export class GuardService implements CanActivate {
+
 
   constructor(private autenticacionService: AutenticacionService) {
 

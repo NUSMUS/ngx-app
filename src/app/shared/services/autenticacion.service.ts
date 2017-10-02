@@ -33,12 +33,23 @@ export class AutenticacionService {
     if (user) {
       return true;
     } else {
-      
       this.router.navigate(['/login']);
     }
   }
 
   logout() {
     firebase.auth().signOut();
+    this.router.navigate(['/login']);
   }
+
+  
+  resetPassword(userdata) {
+    var auth = firebase.auth();
+    return auth.sendPasswordResetEmail(userdata.email)
+      .then(() =>
+        console.log("email sent"))
+      .catch((error) =>
+        console.log(error))
+  }
+
 }

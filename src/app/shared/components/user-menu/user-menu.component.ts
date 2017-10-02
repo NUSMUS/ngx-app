@@ -17,7 +17,8 @@ export class UserMenuComponent implements OnInit {
   }
   logout() {
     this.autService.logout();
-    this.router.navigate(['/login']);
+    
+
   }
 
 }
