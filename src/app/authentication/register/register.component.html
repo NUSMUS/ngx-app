@@ -1,110 +1,115 @@
-<img src="../../assets/img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background" class="full-bg animation-pulseSlow">
-<div id="login-container" class="animation-fadeIn">
-  <!-- Login Title -->
-  <div class="login-title text-center">
-    <h1><i class="gi gi-flash"></i> <strong>ProUI</strong><br><small>Please <strong>Login</strong> or <strong>Register</strong></small></h1>
-  </div>
-  <!-- END Login Title -->
+<!-- <img src="../../assets/img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background" class="full-bg animation-pulseSlow"> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-1">
+      <div id="login-alt-container">
+        <!-- Title -->
+        <h1 class="push-top-bottom">
+          <i class="gi gi-flash"></i> <strong>ProUI</strong><br>
+          <small>Welcome to ProUI Admin Template!</small>
+        </h1>
+        <!-- END Title -->
+        <!-- Key Features -->
 
-  <!-- Login Block -->
-  <div class="block push-bit">
-    <!-- Login Form -->
-    <!-- Register Form -->
-    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" class="form-horizontal form-bordered form-control-borderless">
-      <div class="form-group">
-        <div class="col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-            <input type="email" id="inputEmail" class="form-control" formControlName="email" placeholder="Email" autofocus required>
-            <p class="alert alert-danger" *ngIf="erroresForm.email">
-                {{ erroresForm.email }}
-            </p>
-          </div>
+        <div class="animation-fadeIn">
+          <form>
+            <button type="button" id="btn-twitter" class="btn  btn-social btn-twitter"><i class="fa fa-twitter"></i>  Sign up with your Twitter Account</button>
+          </form>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-            <input type="password" id="inputPassword" class="form-control" formControlName="password" placeholder="Password" required>
-            <p class="alert alert-danger" *ngIf="erroresForm.password">
-                {{ erroresForm.password }}
-            </p>
-          </div>
+        <div class="animation-fadeIn">
+          <form>
+            <button type="button" id="btn-google" class="btn  btn-social btn-google"><i class="fa fa-google"></i>  Sign up with your Google Account</button>
+          </form>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-            <input type="password" id="inputPassword" class="form-control" formControlName="confirm" placeholder="Confirmar Password" required>
-          </div>
+        <div class="animation-fadeIn">
+          <form>
+            <button type="button" id="btn-facebook" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i>Sign up with your Facebook Account</button>
+          </form>
         </div>
-      </div>
-      <div class="form-group form-actions">
-        <div class="col-xs-6">
-          <a href="#modal-terms" data-toggle="modal" class="register-terms">Terms</a>
-          <label class="switch switch-primary" data-toggle="tooltip" title="Agree to the terms">
-                        <input type="checkbox" id="register-terms" name="register-terms">
-                        <span></span>
-                    </label>
+        <div class="animation-fadeIn">
+          <form>
+            <button type="button" id="btn-github" class="btn btn-social btn-github"><i class="fa fa-github"></i>Sign up with your Github Account</button>
+          </form>
         </div>
-        <div class="col-xs-6 text-right">
-          <button type="submit" class="btn btn-sm btn-success" [disabled]="!registroForm.valid || !confirmPass()"><i class="fa fa-plus"></i> Register Account</button>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12 text-center">
-          <small>Do you have an account?</small> <a routerLink="/" id="link-register"><small>Login</small></a>
-        </div>
-      </div>
-    </form>
-    <!-- END Register Form -->
-  </div>
-  <!-- END Login Block -->
-</div>
-<!-- END Login Container -->
 
-<!-- Modal Terms -->
-<div id="modal-terms" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Terms &amp; Conditions</h4>
+        <!-- END Key Features -->
+        <!-- Footer -->
+        <footer class="text-muted push-top-bottom">
+          <small><span id="year-copy"></span> &copy; <a href="https://twitter.com/NussMus" target="_blank">NusMus</a></small>
+        </footer>
+        <!-- END Footer -->
       </div>
-      <div class="modal-body">
-        <h4>Title</h4>
-        <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus
-          eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque
-          semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque
-          non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus
-          eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque
-          semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque
-          non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <h4>Title</h4>
-        <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus
-          eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque
-          semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque
-          non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus
-          eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque
-          semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque
-          non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <h4>Title</h4>
-        <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus
-          eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque
-          semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque
-          non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus
-          eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque
-          semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque
-          non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="col-md-5">
+      <div id="login-container">
+        <!-- Login Title -->
+        <div class="login-title text-center">
+          <h1><strong>Register Account</strong></h1>
+        </div>
+        <!-- END Login Title -->
+        <!-- Login Block -->
+        <div class="block push-bit">
+          <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" class="form-horizontal form-bordered form-control-borderless">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                  <input type="email" id="inputEmail" class="form-control" formControlName="email" placeholder="Email" autofocus required>
+                  <p class="alert alert-danger" *ngIf="erroresForm.email">
+                    {{ erroresForm.email }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                  <input type="password" id="inputPassword" class="form-control" formControlName="password" placeholder="Password" required>
+                  <p class="alert alert-danger" *ngIf="erroresForm.password">
+                    {{ erroresForm.password }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                  <input type="password" id="inputPassword" class="form-control" formControlName="confirm" placeholder="Confirmar Password"
+                    required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group form-actions">
+              <div class="col-xs-6">
+                <a href="#modal-terms" data-toggle="modal" class="register-terms">Terms</a>
+                <label class="switch switch-primary" data-toggle="tooltip" title="Agree to the terms">
+                  <input type="checkbox" id="register-terms" name="register-terms">
+                  <span></span>
+                </label>
+              </div>
+              <div class="col-xs-6 text-right">
+                <button type="submit" class="btn btn-sm btn-success" [disabled]="!registroForm.valid || !confirmPass()"><i class="fa fa-plus"></i> Register Account</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12 text-center">
+                <small>Do you have an account?</small> <a routerLink="/" id="link-register"><small>Login</small></a>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<!-- END Modal Terms -->
-<div id="particles-js"></div>
-<!-- END Modal Terms -->
+<div class="btn-group">
+  <a href="javascript:void(0)" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Languaje <span class="caret"></span></a>
+  <ul class="dropdown-menu text-left">
+    <li><a href="javascript:void(0)"><img class="img-small" src="../../assets/img/flat/United-States.ico"> EN</a></li>
+    <li class="divider"></li>
+    <li><a href="javascript:void(0)"><img class="img-small" src="../../assets/img/flat/Mexico.ico"> ES</a></li>
+
+  </ul>
+</div>

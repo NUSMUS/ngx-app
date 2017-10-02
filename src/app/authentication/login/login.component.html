@@ -1,82 +1,106 @@
-<img src="../../assets/img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background" class="full-bg animation-pulseSlow">
-<!-- Login Container -->
-<div id="login-container" class="animation-fadeIn">
-  <!-- Login Title -->
-  <div class="login-title text-center">
-    <h1><i class="gi gi-flash"></i> <strong>ProUI</strong><br><small>Please <strong>Login</strong> or <strong>Register</strong></small></h1>
-    <div  class="animation-fadeIn">
-      <form>
-        <button type="button" id="btn-twitter" class="btn btn-block btn-social btn-twitter"><i class="fa fa-twitter"></i>  Login with your Twitter Account</button>
-      </form>
-    </div>
-    <div  class="animation-fadeIn">
-      <form>
-        <button type="button" id="btn-google" class="btn btn-block btn-social btn-google"><i class="fa fa-google"></i>  Login with your Google Account</button>
-      </form>
-    </div>
-    <div  class="animation-fadeIn">
-      <form>
-        <button type="button" id="btn-facebook" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook"></i>  Login with your Facebook Account</button>
-      </form>
-    </div>
-    <div  class="animation-fadeIn">
-      <form>
-        <button type="button" id="btn-github" class="btn btn-block btn-social btn-github"><i class="fa fa-github"></i>  Login with your Github Account</button>
-      </form>
-    </div>
-    
-  </div>
-  <!-- END Login Title -->
+<!-- <img src="../../assets/img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background" class="full-bg animation-pulseSlow"> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-1">
+      <div id="login-alt-container">
+        <!-- Title -->
+        <h1 class="push-top-bottom">
+          <i class="gi gi-flash"></i> <strong>ProUI</strong><br>
+          <small>Welcome to ProUI Admin Template!</small>
+        </h1>
+        <!-- END Title -->
+        <!-- Key Features -->
 
-  <!-- Login Block -->
-  <div class="block push-bit">
-    <!-- Login Form -->
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-horizontal form-bordered form-control-borderless">
-      <div class="form-group">
-        <div class="col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" formControlName="email" required autofocus>
-          </div>
+        <div class="animation-fadeIn">
+          <form>
+            <button type="button" id="btn-twitter" class="btn  btn-social btn-twitter"><i class="fa fa-twitter"></i>  Login with your Twitter Account</button>
+          </form>
+        </div>
+        <div class="animation-fadeIn">
+          <form>
+            <button type="button" id="btn-google" class="btn  btn-social btn-google"><i class="fa fa-google"></i>  Login with your Google Account</button>
+          </form>
+        </div>
+        <div class="animation-fadeIn">
+          <form>
+            <button type="button" id="btn-facebook" class="btn btn-social btn-facebook"><i class="fa fa-facebook"></i>Login with your Facebook Account</button>
+          </form>
+        </div>
+        <div class="animation-fadeIn">
+          <form>
+            <button type="button" id="btn-github" class="btn btn-social btn-github"><i class="fa fa-github"></i>  Login with your Github Account</button>
+          </form>
+        </div>
+
+        <!-- END Key Features -->
+        <!-- Footer -->
+        <footer class="text-muted push-top-bottom">
+          <small><span id="year-copy"></span> &copy; <a href="https://twitter.com/NussMus" target="_blank">NusMus</a></small>
+        </footer>
+        <!-- END Footer -->
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div id="login-container">
+        <!-- Login Title -->
+        <div class="login-title text-center">
+          <h1><strong>Login</strong></h1>
+        </div>
+        <!-- END Login Title -->
+        <!-- Login Block -->
+        <div class="block push-bit">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-horizontal form-bordered form-control-borderless">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email" formControlName="email" required autofocus>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group form-actions">
+              <div class="col-xs-4">
+                <label class="switch switch-primary" data-toggle="tooltip" title="Remember Me?">
+                  <input type="checkbox" id="login-remember-me" name="login-remember-me" checked>
+                  <span></span>
+                </label>
+              </div>
+              <div class="col-xs-8 text-right">
+                <button type="submit" class="btn btn-sm btn-primary" [disabled]="!loginForm.valid"><i class="fa fa-angle-right"></i> Login to Dashboard</button>
+
+                <!-- <a routerLink="/dashboard" class="btn btn-sm btn-primary">Iniciar Sesión</a>-->
+                <!--<a class="btn btn-sm btn-primary" [routerLink]="['/dashboard']" (click)="onLoggedin()"> Iniciar Sesión </a>-->
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12 text-center">
+                <a routerLink="/reminder" id="link-reminder-login"><small>Forgot password?</small></a> -
+                <a routerLink="/register" id="link-reminder-login"><small>Create a new account</small></a>
+              </div>
+            </div>
+          </form>
+          <p class="alert alert-danger" *ngIf="mensaje">
+            El usuario o contraseña no es correcto.
+          </p>
         </div>
       </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password" required>
-          </div>
-        </div>
-      </div>
-      <div class="form-group form-actions">
-        <div class="col-xs-4">
-          <label class="switch switch-primary" data-toggle="tooltip" title="Remember Me?">
-            <input type="checkbox" id="login-remember-me" name="login-remember-me" checked>
-            <span></span>
-          </label>
-        </div>
-        <div class="col-xs-8 text-right">
-          <button type="submit" class="btn btn-sm btn-primary" [disabled]="!loginForm.valid" ><i class="fa fa-angle-right"></i> Login to Dashboard</button>
-          
-          <!-- <a routerLink="/dashboard" class="btn btn-sm btn-primary">Iniciar Sesión</a>-->
-          <!--<a class="btn btn-sm btn-primary" [routerLink]="['/dashboard']" (click)="onLoggedin()"> Iniciar Sesión </a>-->
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12 text-center">
-          <a routerLink="/reminder" id="link-reminder-login"><small>Forgot password?</small></a> -
-          <a routerLink="/register" id="link-reminder-login"><small>Create a new account</small></a>
-        </div>
-      </div>
-    </form>
-    <p class="alert alert-danger" *ngIf="mensaje">
-      El usuario o contraseña no es correcto.
-    </p>
-    <!-- END Login Form -->
-    
+    </div>
   </div>
-  
 </div>
-<!-- END Modal Terms -->
-<div id="particles-js"></div>
-<!-- END Modal Terms -->
+<div class="btn-group">
+  <a href="javascript:void(0)" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Languaje<span class="caret"></span></a>
+  <ul class="dropdown-menu text-left">
+    <li><a href="javascript:void(0)"><img class="img-small" src="../../assets/img/flat/United-States.ico"> EN</a></li>
+    <li class="divider"></li>
+    <li><a href="javascript:void(0)"><img class="img-small" src="../../assets/img/flat/Mexico.ico"> ES</a></li>
+
+  </ul>
+</div>

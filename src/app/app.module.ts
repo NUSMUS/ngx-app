@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule,
+    HttpModule
   ],
   providers: [
     GuardService,

@@ -1,43 +1,69 @@
-<img src="../../assets/img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background" class="full-bg animation-pulseSlow">
-<div id="login-container" class="animation-fadeIn">
-    <!-- Login Title -->
-    <div class="login-title text-center">
-        <h1><i class="gi gi-flash"></i> <strong>ProUI</strong><br><small>Please <strong>Login</strong> or <strong>Register</strong></small></h1>
-    </div>
-    <!-- END Login Title -->
+<!-- <img src="../../assets/img/placeholders/backgrounds/login_full_bg.jpg" alt="Login Full Background" class="full-bg animation-pulseSlow"> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-1">
+      <div id="login-alt-container">
+        <!-- Title -->
+        <h1 class="push-top-bottom">
+          <i class="gi gi-flash"></i> <strong>ProUI</strong><br>
+          <small>Welcome to ProUI Admin Template!</small>
+        </h1>
+        <!-- END Title -->
+        <!-- Key Features -->
 
-    <!-- Login Block -->
-    <div class="block push-bit">
-        <!-- Login Form -->
-                <!-- Reminder Form -->
-        <form [formGroup]="reminderForm" (ngSubmit)="onSubmit()" class="form-horizontal form-bordered form-control-borderless">
-            <div class="form-group">
-                <div class="col-xs-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                        <input type="email" id="inputEmail" formControlName="email"  class="form-control" placeholder="Email" required autofocus>
-                        <p class="alert alert-danger" *ngIf="erroresForm.email">
-                            {{ erroresForm.email }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-12 text-right">
-                    <button type="submit" [disabled]="!reminderForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Reset Password</button>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-xs-12 text-center">
-                    <small>Did you remember your password?</small> <a routerLink="/" id="link-reminder"><small>Login</small></a>
-                </div>
-            </div>
-        </form>
-        <!-- END Reminder Form -->
 
+
+        <!-- END Key Features -->
+        <!-- Footer -->
+        <footer class="text-muted push-top-bottom">
+          <small><span id="year-copy"></span> &copy; <a href="https://twitter.com/NussMus" target="_blank">NusMus</a></small>
+        </footer>
+        <!-- END Footer -->
       </div>
-    <!-- END Login Block -->
+    </div>
+    <div class="col-md-5">
+      <div id="login-container">
+        <!-- Login Title -->
+        <div class="login-title text-center">
+          <h1><strong>Reset Password</strong></h1>
+        </div>
+        <!-- END Login Title -->
+        <!-- Login Block -->
+        <div class="block push-bit">
+          <form [formGroup]="reminderForm" (ngSubmit)="onSubmit()" class="form-horizontal form-bordered form-control-borderless">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                  <input type="email" id="inputEmail" formControlName="email" class="form-control" placeholder="Email" required autofocus>
+                  <p class="alert alert-danger" *ngIf="erroresForm.email">
+                    {{ erroresForm.email }}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12 text-right">
+                <button type="submit" [disabled]="!reminderForm.valid" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Reset Password</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12 text-center">
+                <small>Did you remember your password?</small> <a routerLink="/" id="link-reminder"><small>Login</small></a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- END Login Container -->
+<div class="btn-group">
+  <a href="javascript:void(0)" data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Languaje <span class="caret"></span></a>
+  <ul class="dropdown-menu text-left">
+    <li><a href="javascript:void(0)"><img class="img-small" src="../../assets/img/flat/United-States.ico"> EN</a></li>
+    <li class="divider"></li>
+    <li><a href="javascript:void(0)"><img class="img-small" src="../../assets/img/flat/Mexico.ico"> ES</a></li>
 
-<!-- END Modal Terms -->
+  </ul>
+</div>

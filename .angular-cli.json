@@ -34,6 +34,8 @@
         "assets/js/app.js",
         "assets/js/pages/login.js",
         "assets/js/pages/index.js"
+
+        
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
